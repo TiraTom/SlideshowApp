@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		A40ED5BD227EF09A005EC269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40ED5BC227EF09A005EC269 /* AppDelegate.swift */; };
-		A40ED5BF227EF09A005EC269 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40ED5BE227EF09A005EC269 /* ViewController.swift */; };
+		A40ED5BF227EF09A005EC269 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40ED5BE227EF09A005EC269 /* SlideViewController.swift */; };
 		A40ED5C2227EF09A005EC269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40ED5C0227EF09A005EC269 /* Main.storyboard */; };
 		A40ED5C4227EF09A005EC269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40ED5C3227EF09A005EC269 /* Assets.xcassets */; };
 		A40ED5C7227EF09A005EC269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40ED5C5227EF09A005EC269 /* LaunchScreen.storyboard */; };
+		A40ED5CF227EF1E4005EC269 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40ED5CE227EF1E4005EC269 /* ZoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A40ED5B9227EF09A005EC269 /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40ED5BC227EF09A005EC269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A40ED5BE227EF09A005EC269 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A40ED5BE227EF09A005EC269 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		A40ED5C1227EF09A005EC269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A40ED5C3227EF09A005EC269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A40ED5C6227EF09A005EC269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A40ED5C8227EF09A005EC269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A40ED5CE227EF1E4005EC269 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				A40ED5BC227EF09A005EC269 /* AppDelegate.swift */,
-				A40ED5BE227EF09A005EC269 /* ViewController.swift */,
+				A40ED5BE227EF09A005EC269 /* SlideViewController.swift */,
 				A40ED5C0227EF09A005EC269 /* Main.storyboard */,
 				A40ED5C3227EF09A005EC269 /* Assets.xcassets */,
 				A40ED5C5227EF09A005EC269 /* LaunchScreen.storyboard */,
 				A40ED5C8227EF09A005EC269 /* Info.plist */,
+				A40ED5CE227EF1E4005EC269 /* ZoomViewController.swift */,
 			);
 			path = SlideshowApp;
 			sourceTree = "<group>";
@@ -135,7 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A40ED5BF227EF09A005EC269 /* ViewController.swift in Sources */,
+				A40ED5BF227EF09A005EC269 /* SlideViewController.swift in Sources */,
+				A40ED5CF227EF1E4005EC269 /* ZoomViewController.swift in Sources */,
 				A40ED5BD227EF09A005EC269 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
