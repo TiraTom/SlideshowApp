@@ -28,11 +28,14 @@ class SlideViewController: UIViewController {
         // slideList = getAllSlides()
         
         slideImageView.isUserInteractionEnabled = true
-        slideImageView.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(goToZoomPage(_:))))
+        slideImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToZoomPage(_:))))
         
         // Set an initial image
         setImage()
-        
+    }
+    
+    // To stop slideshow while going other pages, restart slide show
+    override func viewWillAppear(_ animated: Bool) {
         startAutoSlideShow()
     }
     
@@ -87,6 +90,9 @@ class SlideViewController: UIViewController {
         let storyboard: UIStoryboard = self.storyboard!
         let zoomedSlideView = storyboard.instantiateViewController(withIdentifier: "zoomedSlideView") as! ZoomViewController
         zoomedSlideView.slideName = self.slideList[self.slideNumber]
+        
+        // Stop slideshow while going other pages
+        stopAutoSlideShow()
         self.present(zoomedSlideView, animated: true, completion: nil)
         
     }
