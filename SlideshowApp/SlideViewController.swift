@@ -130,16 +130,5 @@ class SlideViewController: UIViewController {
         self.backButton.isEnabled = isEnabled
     }
     
-    //    private func getAllSlides() -> [String]{
-    //        let fileManager = FileManager.default
-    //        var slides: [String] = []
-    //        do {
-    //            slides = try fileManager.contentsOfDirectory(atPath: "Assets.xcassets/Slides")
-    //        } catch {
-    //            return slides
-    //        }
-    //
-    //        return slides
-    //    }
 }
 

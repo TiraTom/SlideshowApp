@@ -12,10 +12,15 @@ class ZoomViewController: UIViewController {
 
     @IBOutlet weak var zoomedImageView: UIImageView!
     @IBOutlet weak var noImageLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     var slideName :String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        // Do any additional setup after loading the view.
 
         let image: UIImage! = UIImage(named: self.slideName)
         
@@ -26,11 +31,25 @@ class ZoomViewController: UIViewController {
             self.noImageLabel.text = ""
             self.noImageLabel.backgroundColor = UIColor.clear
             
-            let zoom:CGRect = CGRect(x:0, y:0, width: image.size.width * 2, height: image.size.height * 2)
-            
-            self.zoomedImageView.frame = zoom
         }
-        // Do any additional setup after loading the view.
+        
+        // サイズを定義する
+        // 溢れ出るバージョン
+        let Resize:CGSize = CGSize.init(width: image.size.width * 4, height: image.size.height * 4)
+        
+        // 溢れ出ないバージョン
+//        let Resize:CGSize = self.zoomedImageView.frame.size
+
+        //UIImageを指定のサイズにリサイズ
+        let imageResize = image.resize(size: Resize)
+        
+        self.zoomedImageView.image = imageResize
+        self.zoomedImageView.contentMode = UIView.ContentMode.topLeft
+
+        self.scrollView.addSubview(self.zoomedImageView)
+
+        self.scrollView.contentSize =  self.zoomedImageView.frame.size
+        
     }
     
 
@@ -43,5 +62,29 @@ class ZoomViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.scrollView.flashScrollIndicators()
+    }
+    
+}
+
+
+extension UIImage {
+    func resize(size _size: CGSize) -> UIImage? {
+        let widthRatio = _size.width / size.width
+        let heightRatio = _size.height / size.height
+        let ratio = widthRatio < heightRatio ? widthRatio : heightRatio
+        
+        let resizedSize = CGSize(width: size.width * ratio, height: size.height * ratio)
+        
+        UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0)
+        draw(in: CGRect(origin: .zero, size: resizedSize))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return resizedImage
+    }
 
 }
