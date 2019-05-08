@@ -19,7 +19,7 @@ class ZoomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+// hogehoge!
         // Do any additional setup after loading the view.
 
         let image: UIImage! = UIImage(named: self.slideName)
