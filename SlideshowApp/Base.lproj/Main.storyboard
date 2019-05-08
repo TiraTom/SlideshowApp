@@ -19,22 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEQ-uq-u57">
-                                <rect key="frame" x="30" y="78" width="434" height="251"/>
+                                <rect key="frame" x="50" y="79" width="314" height="314"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <color key="tintColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hEQ-uq-u57" secondAttribute="height" multiplier="1:1" id="YWC-rl-Dcb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZS-Gy-u2D">
-                                <rect key="frame" x="52" y="54" width="275" height="271"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VZS-Gy-u2D">
+                                <rect key="frame" x="50" y="79" width="314" height="314"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="271" id="Zox-pf-qdj"/>
+                                    <constraint firstAttribute="width" secondItem="VZS-Gy-u2D" secondAttribute="height" multiplier="1:1" id="qsG-G9-tJU"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="Cvr-DM-cBU">
-                                <rect key="frame" x="100" y="379" width="214" height="30"/>
+                                <rect key="frame" x="100" y="433" width="214" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6Q-To-C7T">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -63,15 +66,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VZS-Gy-u2D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="Chr-s7-LCi"/>
                             <constraint firstItem="VZS-Gy-u2D" firstAttribute="centerX" secondItem="Cvr-DM-cBU" secondAttribute="centerX" id="H6Q-2H-yfk"/>
-                            <constraint firstItem="hEQ-uq-u57" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="U86-Sb-5RX"/>
+                            <constraint firstItem="hEQ-uq-u57" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="JVy-IE-vwm"/>
+                            <constraint firstItem="Cvr-DM-cBU" firstAttribute="top" secondItem="VZS-Gy-u2D" secondAttribute="bottom" constant="40" id="N0Q-88-E2T"/>
+                            <constraint firstItem="VZS-Gy-u2D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="OUJ-FN-xbG"/>
+                            <constraint firstItem="VZS-Gy-u2D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Xed-Xs-tCc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cvr-DM-cBU" secondAttribute="trailing" constant="100" id="gZj-FP-VUK"/>
-                            <constraint firstItem="VZS-Gy-u2D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="jek-RF-LuG"/>
-                            <constraint firstItem="Cvr-DM-cBU" firstAttribute="top" secondItem="VZS-Gy-u2D" secondAttribute="bottom" constant="30" id="nfN-Op-smG"/>
-                            <constraint firstItem="Cvr-DM-cBU" firstAttribute="top" secondItem="hEQ-uq-u57" secondAttribute="bottom" constant="50" id="oRk-sV-aXv"/>
-                            <constraint firstItem="hEQ-uq-u57" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="qkz-qb-Urh"/>
-                            <constraint firstItem="hEQ-uq-u57" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="50" id="sMW-XV-Kzj"/>
+                            <constraint firstItem="hEQ-uq-u57" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hfd-wr-Ge2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VZS-Gy-u2D" secondAttribute="trailing" constant="50" id="l2D-qq-zC5"/>
+                            <constraint firstItem="hEQ-uq-u57" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="omQ-l8-Jmy"/>
                             <constraint firstItem="Cvr-DM-cBU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="vvW-AZ-q1e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -86,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="100.29985007496252"/>
+            <point key="canvasLocation" x="52.173913043478265" y="99.776785714285708"/>
         </scene>
         <!--Zoom View Controller-->
         <scene sceneID="dtz-xN-Uaf">
