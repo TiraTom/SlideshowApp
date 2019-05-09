@@ -37,7 +37,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="Cvr-DM-cBU">
-                                <rect key="frame" x="100" y="433" width="214" height="30"/>
+                                <rect key="frame" x="120" y="433" width="174" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6Q-To-C7T">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -48,14 +48,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuf-qf-rJ5">
-                                        <rect key="frame" x="92" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="72" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="■"/>
                                         <connections>
                                             <action selector="pauseOrStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqb-o1-x9u"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXI-bW-Flt">
-                                        <rect key="frame" x="184" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="144" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="&gt;&gt;"/>
                                         <connections>
                                             <action selector="goToNextSlide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pIo-NV-j9x"/>
@@ -67,15 +67,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VZS-Gy-u2D" firstAttribute="centerX" secondItem="Cvr-DM-cBU" secondAttribute="centerX" id="H6Q-2H-yfk"/>
+                            <constraint firstItem="Cvr-DM-cBU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HMh-gV-iIy"/>
                             <constraint firstItem="hEQ-uq-u57" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="JVy-IE-vwm"/>
                             <constraint firstItem="Cvr-DM-cBU" firstAttribute="top" secondItem="VZS-Gy-u2D" secondAttribute="bottom" constant="40" id="N0Q-88-E2T"/>
                             <constraint firstItem="VZS-Gy-u2D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="OUJ-FN-xbG"/>
                             <constraint firstItem="VZS-Gy-u2D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Xed-Xs-tCc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cvr-DM-cBU" secondAttribute="trailing" constant="100" id="gZj-FP-VUK"/>
                             <constraint firstItem="hEQ-uq-u57" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hfd-wr-Ge2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VZS-Gy-u2D" secondAttribute="trailing" constant="50" id="l2D-qq-zC5"/>
                             <constraint firstItem="hEQ-uq-u57" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="omQ-l8-Jmy"/>
-                            <constraint firstItem="Cvr-DM-cBU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="vvW-AZ-q1e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -125,7 +124,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="↩︎ Back"/>
                                 <connections>
-                                    <segue destination="3Bm-1V-d8d" kind="unwind" unwindAction="unwind:" id="nGX-Vv-dGp"/>
+                                    <action selector="backButton:" destination="eYA-Uy-5Nw" eventType="touchUpInside" id="6XI-ao-ZC2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -149,7 +148,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3C-Xx-2lT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="3Bm-1V-d8d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="751.875" y="99.295774647887328"/>
         </scene>

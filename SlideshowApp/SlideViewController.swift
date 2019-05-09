@@ -20,6 +20,7 @@ class SlideViewController: UIViewController {
     var slideList: [String]! = ["slide1", "slide2", "slide3", "slide4"]
     var slideNumber: Int! = 0
     var autoSlideShowTimer: Timer!
+    var isSlideShowValid :Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,9 @@ class SlideViewController: UIViewController {
     
     // To stop slideshow while going other pages, restart slide show
     override func viewWillAppear(_ animated: Bool) {
-        startAutoSlideShow()
+        if isSlideShowValid {
+            startAutoSlideShow()
+        }
     }
     
     @IBAction func goToNextSlide(_ sender: Any) {
@@ -73,6 +76,8 @@ class SlideViewController: UIViewController {
             self.autoSlideShowTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector:  #selector(autoGoToNextSlide(_:)), userInfo: nil, repeats: true)
 
         }
+        
+        isSlideShowValid = true
     }
     
     private func stopAutoSlideShow(){
@@ -84,13 +89,15 @@ class SlideViewController: UIViewController {
             self.autoSlideShowTimer.invalidate()
             self.autoSlideShowTimer = nil
         }
+        
+        isSlideShowValid = false
     }
     
     @objc private func goToZoomPage(_ sender: UITapGestureRecognizer){
         let storyboard: UIStoryboard = self.storyboard!
         let zoomedSlideView = storyboard.instantiateViewController(withIdentifier: "zoomedSlideView") as! ZoomViewController
         zoomedSlideView.slideName = self.slideList[self.slideNumber]
-        
+        zoomedSlideView.isSlideShowValid = self.isSlideShowValid
         // Stop slideshow while going other pages
         stopAutoSlideShow()
         self.present(zoomedSlideView, animated: true, completion: nil)
