@@ -14,12 +14,17 @@ class ZoomViewController: UIViewController {
     @IBOutlet weak var noImageLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBAction func backButton(_ sender: Any) {
+        let pvc = self.presentingViewController as? SlideViewController
+        pvc?.isSlideShowValid = self.isSlideShowValid
+        self.dismiss(animated: true, completion: nil)
+    }
     var slideName :String! = ""
+    var isSlideShowValid :Bool! = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-// hogehoge!
         // Do any additional setup after loading the view.
 
         let image: UIImage! = UIImage(named: self.slideName)
@@ -36,9 +41,9 @@ class ZoomViewController: UIViewController {
         // サイズを定義する
         // 溢れ出るバージョン
         let Resize:CGSize = CGSize.init(width: image.size.width * 4, height: image.size.height * 4)
-        
+
         // 溢れ出ないバージョン
-//        let Resize:CGSize = self.zoomedImageView.frame.size
+        //let Resize:CGSize = self.zoomedImageView.frame.size
 
         //UIImageを指定のサイズにリサイズ
         let imageResize = image.resize(size: Resize)
