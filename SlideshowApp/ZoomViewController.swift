@@ -15,12 +15,9 @@ class ZoomViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func backButton(_ sender: Any) {
-        let pvc = self.presentingViewController as? SlideViewController
-        pvc?.isSlideShowValid = self.isSlideShowValid
         self.dismiss(animated: true, completion: nil)
     }
     var slideName :String! = ""
-    var isSlideShowValid :Bool! = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
