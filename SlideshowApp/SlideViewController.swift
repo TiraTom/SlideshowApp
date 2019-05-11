@@ -58,7 +58,7 @@ class SlideViewController: UIViewController {
     
     @IBAction func pauseOrStart(_ sender: Any) {
         if self.autoSlideShowTimer != nil {
-            stopAutoSlideShow()
+            stopAutoSlideShow(isPageChanging: false)
         }else {
             startAutoSlideShow()
         }
@@ -80,7 +80,7 @@ class SlideViewController: UIViewController {
         isSlideShowValid = true
     }
     
-    private func stopAutoSlideShow(){
+    private func stopAutoSlideShow(isPageChanging: Bool){
         
         changeGoOrBackButtonEnabled(isEnabled: true)
         pauseStartButton.setTitle("▷", for: UIControl.State.normal)
@@ -90,16 +90,20 @@ class SlideViewController: UIViewController {
             self.autoSlideShowTimer = nil
         }
         
-        isSlideShowValid = false
+        // when it's going to other pages, doesn't change the value of isSlideShowValid
+        if !isPageChanging {
+            isSlideShowValid = false
+        }
     }
     
     @objc private func goToZoomPage(_ sender: UITapGestureRecognizer){
         let storyboard: UIStoryboard = self.storyboard!
         let zoomedSlideView = storyboard.instantiateViewController(withIdentifier: "zoomedSlideView") as! ZoomViewController
         zoomedSlideView.slideName = self.slideList[self.slideNumber]
-        zoomedSlideView.isSlideShowValid = self.isSlideShowValid
+        
         // Stop slideshow while going other pages
-        stopAutoSlideShow()
+        stopAutoSlideShow(isPageChanging: true)
+        
         self.present(zoomedSlideView, animated: true, completion: nil)
         
     }
