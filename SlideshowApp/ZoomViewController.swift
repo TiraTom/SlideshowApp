@@ -12,7 +12,7 @@ class ZoomViewController: UIViewController {
 
     @IBOutlet weak var zoomedImageView: UIImageView!
     @IBOutlet weak var noImageLabel: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
+//    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -37,20 +37,21 @@ class ZoomViewController: UIViewController {
         
         // サイズを定義する
         // 溢れ出るバージョン
-        let Resize:CGSize = CGSize.init(width: image.size.width * 4, height: image.size.height * 4)
+        //let Resize:CGSize = CGSize.init(width: image.size.width * 4, height: image.size.height * 4)
 
         // 溢れ出ないバージョン
         //let Resize:CGSize = self.zoomedImageView.frame.size
 
         //UIImageを指定のサイズにリサイズ
-        let imageResize = image.resize(size: Resize)
+        //let imageResize = image.resize(size: Resize)
         
-        self.zoomedImageView.image = imageResize
-        self.zoomedImageView.contentMode = UIView.ContentMode.topLeft
+//        self.zoomedImageView.image = imageResize
+        self.zoomedImageView.image = image
+        //self.zoomedImageView.contentMode = UIView.ContentMode.topLeft
 
-        self.scrollView.addSubview(self.zoomedImageView)
-
-        self.scrollView.contentSize =  self.zoomedImageView.frame.size
+//        self.scrollView.addSubview(self.zoomedImageView)
+//
+//        self.scrollView.contentSize =  self.zoomedImageView.frame.size
         
     }
     
@@ -67,7 +68,7 @@ class ZoomViewController: UIViewController {
 
     
     override func viewDidAppear(_ animated: Bool) {
-        self.scrollView.flashScrollIndicators()
+//        self.scrollView.flashScrollIndicators()
     }
     
 }
